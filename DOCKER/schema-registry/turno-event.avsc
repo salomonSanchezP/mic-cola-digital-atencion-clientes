@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "name": "TurnoEvent",
+  "namespace": "com.registros.event",
+  "fields": [
+    {
+      "name": "codigoTurno",
+      "type": "string"
+    },
+    {
+      "name": "nombreCliente",
+      "type": "string"
+    },
+    {
+      "name": "documentoIdentidad",
+      "type": "long"
+    },
+    {
+      "name": "fechaHoraCreacion",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "fechaHoraLlamado",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "default": 0
+    },
+    {
+      "name": "estado",
+      "type": {
+        "type": "enum",
+        "name": "EstadoTurno",
+        "symbols": ["EN_ESPERA", "LLAMADO", "ATENDIDO", "CANCELADO"]
+      }
+    },
+    {
+      "name": "posicionEnCola",
+      "type": ["null", "int"],
+      "default": null
+    }
+  ]
+}

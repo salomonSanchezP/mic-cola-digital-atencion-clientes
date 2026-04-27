@@ -1,0 +1,22 @@
+services:
+  # PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: financial-postgres
+    environment:
+      POSTGRES_USER: financebank
+      POSTGRES_PASSWORD: financebank123
+      POSTGRES_DB: financial_system
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - financial-network
+
+volumes:
+  postgres-data:
+
+networks:
+  financial-network:
+    driver: bridge

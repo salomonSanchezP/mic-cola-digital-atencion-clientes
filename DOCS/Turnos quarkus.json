@@ -1,0 +1,224 @@
+{
+  "info": {
+    "name": "Turnos quarkus",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "health check api",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8082/api/v1/dashboard/health",
+              "protocol": "http",
+              "host": [
+                "localhost:8082"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "dashboard",
+                "health"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "listar todos los registros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8082/api/v1/dashboard/health",
+              "protocol": "http",
+              "host": [
+                "localhost:8082"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "dashboard",
+                "health"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "health check api",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8085/api/v1/turnos/hello",
+          "protocol": "http",
+          "host": [
+            "localhost:8085"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "turnos",
+            "hello"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "crear turno",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8085/api/v1/turnos/create",
+          "protocol": "http",
+          "host": [
+            "localhost:8085"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "turnos",
+            "create"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombreCliente\": \"salomon \",\n  \"documentoIdentidad\": \"72780689\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "listar turnos en espera",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/turnos/en-espera",
+          "protocol": "http",
+          "host": [
+            "localhost:8081"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "turnos",
+            "en-espera"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Atender cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8085/api/v1/turnos/atender",
+          "protocol": "http",
+          "host": [
+            "localhost:8085"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "turnos",
+            "atender"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigoTurno\": \"T-003\",\n  \"estado\": \"ATENDIDO\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "llamar cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8085/api/v1/turnos/llamar",
+          "protocol": "http",
+          "host": [
+            "localhost:8085"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "turnos",
+            "llamar"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigoTurno\": \"T-003\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": []
+}

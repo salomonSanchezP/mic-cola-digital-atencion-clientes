@@ -1,0 +1,27 @@
+application:
+  kafka-values:
+    bootstrap-servers: PLAINTEXT://localhost:19092
+  turno-service:
+    url: http://localhost:8085
+
+quarkus:
+  http:
+    port: 8082
+
+  rest-client:
+    ms-api-turnos:
+      url: http://localhost:8085
+      scope: jakarta.inject.Singleton
+  datasource:
+    username: financebank
+    password: financebank123
+    jdbc:
+      url: jdbc:postgresql://${DB_HOST:localhost:5432}/${DB_NAME:db_turnos}
+
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+    log:
+      sql: false
+      format-sql: true
+      bind-parameters: false

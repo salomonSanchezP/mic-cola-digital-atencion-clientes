@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos quarkus - API Documentation</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        #opencollection-container { width: 100vw; height: 100vh; }
+    </style>
+    <link rel="stylesheet" href="https://cdn.opencollection.com/docs.css">
+    <script src="https://cdn.opencollection.com/docs.js"></script>
+</head>
+<body>
+    <div id="opencollection-container"></div>
+    <script>
+        const collectionData = "opencollection: 1.0.0\ninfo:\n  name: Turnos quarkus\nconfig:\n  proxy:\n    inherit: true\n    config:\n      protocol: http\n      hostname: ''\n      port: ''\n      auth:\n        username: ''\n        password: ''\n      bypassProxy: ''\nitems:\n  - info:\n      name: Atender cliente\n      type: http\n      seq: 4\n    http:\n      method: PUT\n      url: http://localhost:8085/api/v1/turnos/atender\n      body:\n        type: json\n        data: |-\n          {\n            \"codigoTurno\": \"T-003\",\n            \"estado\": \"ATENDIDO\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: crear turno\n      type: http\n      seq: 2\n    http:\n      method: POST\n      url: http://localhost:8085/api/v1/turnos/create\n      body:\n        type: json\n        data: |-\n          {\n            \"nombreCliente\": \"chalo\",\n            \"documentoIdentidad\": \"72780683\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: listar turnos en espera\n      type: http\n      seq: 3\n    http:\n      method: GET\n      url: http://localhost:8081/api/v1/turnos/en-espera\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: health check api\n      type: http\n      seq: 1\n    http:\n      method: GET\n      url: http://localhost:8085/api/v1/turnos/hello\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: llamar cliente\n      type: http\n      seq: 6\n    http:\n      method: PUT\n      url: http://localhost:8085/api/v1/turnos/llamar\n      body:\n        type: json\n        data: |-\n          {\n            \"codigoTurno\": \"T-003\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: dashboard\n      type: folder\n      seq: 6\n    request:\n      auth: inherit\n    items:\n      - info:\n          name: health check api\n          type: http\n          seq: 1\n        http:\n          method: GET\n          url: http://localhost:8082/api/v1/dashboard/health\n          auth: inherit\n        settings:\n          encodeUrl: true\n          timeout: 0\n          followRedirects: true\n          maxRedirects: 5\n      - info:\n          name: listar todos los registros\n          type: http\n          seq: 2\n        http:\n          method: GET\n          url: http://localhost:8082/api/v1/dashboard/health\n          auth: inherit\n        settings:\n          encodeUrl: true\n          timeout: 0\n          followRedirects: true\n          maxRedirects: 5\nbundled: true\nextensions:\n  bruno:\n    ignore:\n      - node_modules\n      - .git\n    exportedAt: '2026-04-27T02:26:35.704Z'\n    exportedUsing: Bruno/3.3.0\n";
+        new window.OpenCollection({
+            target: document.getElementById('opencollection-container'),
+            opencollection: collectionData,
+            theme: 'light'
+        });
+    </script>
+</body>
+</html>
