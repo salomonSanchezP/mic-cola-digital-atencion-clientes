@@ -704,15 +704,6 @@ telnet localhost 9092
 
 ---
 
-## 📚 Referencias
-
-- [Quarkus Documentation](https://quarkus.io/guides/)
-- [Hibernate Panache](https://quarkus.io/guides/hibernate-orm-panache)
-- [Kafka Connector](https://quarkus.io/guides/kafka)
-- [PostgreSQL JDBC](https://jdbc.postgresql.org/)
-
----
-
 ## 📝 Notas Importantes
 
 - Todos los endpoints retornan JSON
