@@ -2,18 +2,6 @@
 
 Este proyecto implementa un sistema de gestión de turnos usando Quarkus, Hibernate Panache, Kafka y buenas prácticas de arquitectura. Cumple con los siguientes criterios:
 
-## Criterios y características
-
-| Criterio                           | Descripción                                                                 |
-|-------------------------------------|-----------------------------------------------------------------------------|
-| Definición del proceso de negocio   | Proceso de registro y gestión de turnos de atención.                        |
-| APIs REST con Quarkus               | CRUD completo, validaciones, manejo de errores y uso correcto de HTTP.      |
-| Persistencia con Hibernate + Panache| Entidades, repositorios y consultas integradas con base de datos PostgreSQL. |
-| Consumo de APIs externas            | Preparado para integración vía REST Client.                                 |
-| Eventos con Kafka                   | Producción y consumo de eventos de turnos.                                  |
-| Arquitectura y buenas prácticas     | Uso de DTOs, separación de capas, inyección de dependencias.                |
-| Repositorio y documentación         | Estructura clara, README y ejemplos.                                        |
-
 ## Estructura del Proyecto
 
 - **src/main/java/pe/registros/ms/ventanilla**
