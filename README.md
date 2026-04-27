@@ -72,7 +72,7 @@ El **Sistema de Turnos Virtuales** es una solución integral de atención al cli
 **Responsabilidades:**
 - Registro de clientes
 - Asignación de códigos de turno
-- Gestión de estados de turnos (CREADO, LLAMADO, ATENDIDO, CANCELADO)
+- Gestión de estados de turnos (EN_ESPERA, LLAMADO, ATENDIDO, CANCELADO)
 - Emisión de eventos Kafka
 
 **Tecnologías:**
@@ -292,7 +292,7 @@ Content-Type: application/json
   "codigoTurno": "T-001",
   "nombreCliente": "JOSE MARTINEZ C.",
   "documentoIdentidad": 12345678,
-  "estado": "CREADO",
+  "estado": "EN_ESPERA",
   "posicionEnCola": 1,
   "fechaHoraCreacion": "2026-04-26T19:42:30.166542"
 }
@@ -460,7 +460,7 @@ GET /api/v1/dashboard/turnos/en-espera
       "type": {
         "type": "enum",
         "name": "EstadoTurno",
-        "symbols": ["CREADO", "LLAMADO", "ATENDIDO", "CANCELADO"]
+        "symbols": ["EN_ESPERA", "LLAMADO", "ATENDIDO", "CANCELADO"]
       }
     },
     {
@@ -478,13 +478,13 @@ GET /api/v1/dashboard/turnos/en-espera
 
 ### Eventos Producidos
 
-#### Evento: Turno Creado
+#### Evento: Turno EN_ESPERA
 ```json
 {
   "codigoTurno": "T-001",
   "nombreCliente": "JOSE MARTINEZ C.",
   "documentoIdentidad": 12345678,
-  "estado": "CREADO",
+  "estado": "EN_ESPERA",
   "fechaHoraEvento": "2026-04-26T19:42:30.166542",
   "posicionEnCola": 1
 }
@@ -537,7 +537,7 @@ curl -X POST http://localhost:8085/turnos \
   "codigoTurno": "T-001",
   "nombreCliente": "Juan Pérez",
   "documentoIdentidad": 72780686,
-  "estado": "CREADO",
+  "estado": "EN_ESPERA",
   "posicionEnCola": 1
 }
 ```
